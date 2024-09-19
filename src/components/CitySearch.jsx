@@ -1,8 +1,7 @@
-// src/CitySearch.js
-import{ useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function CitySearch() {
+const CitySearch = () => {
   const [city, setCity] = useState('');
   const navigate = useNavigate();
 
@@ -13,19 +12,16 @@ export default function CitySearch() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Stadt eingeben..."
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
+    <div className="city-search">
+      <input 
+        type="text" 
+        value={city} 
+        onChange={(e) => setCity(e.target.value)} 
+        placeholder="Enter a city"
       />
-      <button onClick={handleSearch}>Suchen</button>
-
-
-
+      <button onClick={handleSearch}>Search</button>
     </div>
   );
-}
+};
 
-
+export default CitySearch;
